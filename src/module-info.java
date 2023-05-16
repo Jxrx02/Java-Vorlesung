@@ -6,4 +6,5 @@
  *
  */
 module dhbw_programmieren {
+    requires java.desktop;
 }
