@@ -13,7 +13,7 @@ public class hello_world {
 		j = scan.nextInt();
 		System.out.println("Die Fakultät ist: " + fakultät(j));
 	}
-	
+	//
 	public static int fakultät(int n) {
 	
         if (n <= 1) {
