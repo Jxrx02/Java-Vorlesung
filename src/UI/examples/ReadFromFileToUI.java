@@ -1,20 +1,19 @@
-package UI;
+package UI.examples;
 
 import javax.swing.*;
 import java.io.BufferedReader;
-import java.io.Console;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class UIReadFromFile extends JFrame {
+public class ReadFromFileToUI extends JFrame {
 
 
 
 
-    public UIReadFromFile(String dateiname, int breite, int höhe){
+    public ReadFromFileToUI(String dateiname, int breite, int höhe){
         JTextArea jTextArea = new JTextArea();
 
         List<String> lines = new ArrayList<>(); // zweites Semester!
@@ -61,7 +60,7 @@ public class UIReadFromFile extends JFrame {
                 inputArray = input.split(" ");
 
 
-                UIReadFromFile textFrame = new UIReadFromFile(inputArray[0], Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
+                ReadFromFileToUI textFrame = new ReadFromFileToUI(inputArray[0], Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
 
             }
         }

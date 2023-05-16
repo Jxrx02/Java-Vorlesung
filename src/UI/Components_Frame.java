@@ -2,8 +2,8 @@ package UI;
 
 import javax.swing.*;
 
-public class MeinFrame extends JFrame {
-    public MeinFrame() {
+public class Components_Frame extends JFrame {
+    public Components_Frame() {
         //JPANEL
         JPanel panel = new JPanel();
 
@@ -69,6 +69,6 @@ public class MeinFrame extends JFrame {
 
     public static void main(String[] args) {
         // Erstelle ein neues JFrame
-        MeinFrame frame = new MeinFrame();
+        Components_Frame frame = new Components_Frame();
     }
 }
