@@ -30,7 +30,7 @@ public class PalindromeFile {
 
         // Ab hier beginnt das neue
 
-        String dateiName = "FileExperiments/palindrome.txt";
+        String dateiName = "dir/testFile.txt";
         if(eingabe.equalsIgnoreCase(ergebnis.toString())){                          // Nur speichern, wenn es wirklich ein Palindrom ist
             try(FileWriter fileWriter = new FileWriter(dateiName, true)){
                 fileWriter.write(eingabe + System.lineSeparator());

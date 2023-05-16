@@ -127,7 +127,7 @@ public class TextFile {
     }
 
     public static void main(String[] args) {
-        TextFile tfl = new TextFile("FileExperiments/entchen.txt");
+        TextFile tfl = new TextFile("dir/testFile.txt");
         tfl.read();
         for(String line : tfl.getLines()){
             System.out.println(line);
