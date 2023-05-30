@@ -14,7 +14,9 @@ public class Ambulance extends Car {
 		this.blauLicht = blauLicht;
 	}
 
-
+	public void info(){
+		System.out.println("Ambulance: \n vMax: " + this.vMax + " Blaulicht: " + blauLicht   + " AnzRäder:" + this.AnzRäder + " Pos:" + this.getPosition() );
+	}
 
 	public Ambulance(double vCurrent,boolean light) {
 		super(vCurrent);
