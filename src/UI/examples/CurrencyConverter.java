@@ -4,6 +4,9 @@ import UI.Components_Frame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.Console;
 
 public class CurrencyConverter extends JFrame {
 

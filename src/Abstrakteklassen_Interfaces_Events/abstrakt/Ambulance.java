@@ -1,4 +1,4 @@
-package Abstrakteklassen_Interfaces.abstrakt;
+package Abstrakteklassen_Interfaces_Events.abstrakt;
 
 public class Ambulance extends Car {
 
@@ -18,7 +18,7 @@ public class Ambulance extends Car {
 		System.out.println("Ambulance: \n vMax: " + this.vMax + " Blaulicht: " + blauLicht   + " AnzRäder:" + this.AnzRäder + " Pos:" + this.getPosition() );
 	}
 
-	public Ambulance(double vCurrent,boolean light) {
+	public Ambulance(double vCurrent, boolean light) {
 		super(vCurrent);
 		setBlauLicht(light);
 

@@ -1,4 +1,4 @@
-package Abstrakteklassen_Interfaces.abstrakt;
+package Abstrakteklassen_Interfaces_Events.abstrakt;
 
 public abstract class Vehicle {
 
