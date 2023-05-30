@@ -20,9 +20,9 @@ public class CurrencyConverter extends JFrame {
         Button btn_usd_euro = new Button("USD -> Euro");
         Button btn_cancel = new Button("Cancel");
         //add to panel
-        panel.add(btn_euro_usd);
-        panel.add(btn_usd_euro);
-        panel.add(btn_cancel);
+        panel.add(btn_euro_usd, BorderLayout.WEST);
+        panel.add(btn_usd_euro,BorderLayout.CENTER);
+        panel.add(btn_cancel, BorderLayout.EAST);
 
         //add panel, textfield to layout
         add(textField, BorderLayout.NORTH);
