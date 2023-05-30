@@ -63,7 +63,7 @@ public class BinaryNumber extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setTitle("Binary Number");
-        setSize(350, 100);
+        setSize(750, 200);
 
     }
 

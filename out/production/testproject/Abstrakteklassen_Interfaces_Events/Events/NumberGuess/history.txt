@@ -3,5 +3,3 @@ NumberGuess{playerName='Jeremias', int_number=89, int_attempt=7}
 NumberGuess{playerName='Jonas', int_number=42, int_attempt=2}
 
 NumberGuess{playerName='Niklas', int_number=68, int_attempt=2}
-
-NumberGuess{playerName='DDD', int_number=49, int_attempt=2}
