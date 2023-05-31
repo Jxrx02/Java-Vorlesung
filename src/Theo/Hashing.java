@@ -1,4 +1,4 @@
-package Abstrakteklassen_Interfaces_Events.abstrakt;
+package Theo;
 
 public class Hashing {
 
