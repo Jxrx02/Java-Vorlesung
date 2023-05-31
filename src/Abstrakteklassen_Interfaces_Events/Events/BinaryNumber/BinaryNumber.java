@@ -12,7 +12,7 @@ public class BinaryNumber extends JFrame {
 
         setLayout(new BorderLayout(5, 5));
 
-
+        //SwingConstants.RIGHT
 
         JPanel top = new JPanel();
         JPanel mid = new JPanel();

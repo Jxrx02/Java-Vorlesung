@@ -13,11 +13,9 @@ public class Hashing {
      * d) bei 100% Füllstand.
      *  mit Zahlen arbeiten. Zahlen zufällig erzeugen.
      *  mind. 100 Plätze und 100 Zugriffe.
-     *  Gruppen möglich. Jeder macht mindestens ein Hash- Verfahren.
-     *  Ergebnisse (Beschreibung, Tabelle, Programm) als
-     * PDF auf dem Lernserver ablegen.
      */
 
+    //Füllstände
     int filled50, filled90, filled95, filled100;
 
     public static void main(String[] args) {
@@ -25,62 +23,77 @@ public class Hashing {
     }
 
     public Hashing() {
+        //durchschnittliche Füllstände
         int avg50 = 0, avg90 = 0, avg95 = 0, avg100 = 0;
-        int amountTests = 1000;
+        //Testdurchläufe
+        int amountTests = 10000;
         for (int i = 0; i < amountTests; i++) {
-            method();
+            executeHash();
             avg50 += filled50;
             avg90 += filled90;
             avg95 += filled95;
             avg100 += filled100;
         }
-        avg50 /= amountTests;
-        avg90 /= amountTests;
-        avg95 /= amountTests;
-        avg100 /= amountTests;
-        System.out.println("On average at 50%: " + avg50);
-        System.out.println("On average at 90%: " + avg90);
-        System.out.println("On average at 95%: " + avg95);
-        System.out.println("On average at 100%: " + avg100);
+        avg50 /= amountTests; avg90 /= amountTests;
+        avg95 /= amountTests; avg100 /= amountTests;
+
+        System.out.println("Durchschnittliche Kollision - Füllstand: 50%: " + avg50);
+        System.out.println("Durchschnittliche Kollision - Füllstand: 90%: " + avg90);
+        System.out.println("Durchschnittliche Kollision - Füllstand: 95%: " + avg95);
+        System.out.println("Durchschnittliche Kollision - Füllstand: 100%: " + avg100);
     }
 
     public int mod(int s, int p) {
+        //f(Schlüssel) = s mod P mit P = Größe des Speichers, S = Schlüssel
         return (s % p);
+    }
+    public int mult(int s, int p) {
+        //f(Schlüssel) = s * irrationale Zahl;
+        return (int) (s * Math.PI);
+    }
+     public static int anotherhash(String data) {
+        int hashValue = 0;
+        for (int i = 0; i < data.length(); i++) {
+            hashValue += (int) data.charAt(i);  // Die ASCII-Werte der Zeichen addieren
+        }
+        return hashValue;
     }
 
 
-    public void method() {
+
+    public void executeHash() {
         int arraySize = 100;
-        int[] arrayMap = new int[arraySize];
-        int rnd, hash, counterCollision = 0, counterFilled = 0;
+        int[] array = new int[arraySize];
+        int rnd, hash_key, countCollision = 0, countFilled = 0;
 
         for (int i = 0; i < 100000000; i++) {
-            if (counterFilled == arraySize * 0.5) {
-                System.out.println("Filled 50%, collisions: " + counterCollision);
-                filled50 = counterCollision;
-            } else if (counterFilled == arraySize * 0.90) {
-                System.out.println("Filled 90%, collisions: " + counterCollision);
-                filled90 = counterCollision;
-            } else if (counterFilled == arraySize * 0.95) {
-                System.out.println("Filled 95%, collisions: " + counterCollision);
-                filled95 = counterCollision;
-            } else if (counterFilled == arraySize) {
-                System.out.println("Filled 100%, collisions: " + counterCollision);
-                filled100 = counterCollision;
+            if (countFilled == arraySize * 0.5) {
+                System.out.println("Filled 50%, collisions: " + countCollision);
+                filled50 = countCollision;
+            } else if (countFilled == arraySize * 0.90) {
+                System.out.println("Filled 90%, collisions: " + countCollision);
+                filled90 = countCollision;
+            } else if (countFilled == arraySize * 0.95) {
+                System.out.println("Filled 95%, collisions: " + countCollision);
+                filled95 = countCollision;
+            } else if (countFilled == arraySize) {
+                System.out.println("Filled 100%, collisions: " + countCollision);
+                filled100 = countCollision;
                 break;
             }
 
             rnd = (int) (Math.random() * 1000);
-            hash = mod(rnd, arraySize);
+            hash_key = mod(rnd, arraySize);
+            //hash_key = mult(rnd, arraySize); -> Speicher zu gering
 
-            //collision
-            if (arrayMap[hash] != 0) {
-                counterCollision++;
+            //Kollision
+            if (array[hash_key] != 0) {
+                countCollision++;
             }
-            //no collision
+            //keine Kollision -> fülle mit zufälliger Zahl
             else {
-                arrayMap[hash] = rnd;
-                counterFilled++;
+                array[hash_key] = rnd;
+                countFilled++;
             }
         }
     }
