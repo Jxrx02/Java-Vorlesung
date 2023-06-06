@@ -1,6 +1,4 @@
-package Abstrakteklassen_Interfaces_Events.Events;
-
-import UI.examples.CurrencyConverter;
+package Events;
 
 import javax.swing.*;
 import java.awt.*;

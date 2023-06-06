@@ -1,10 +1,9 @@
-package Abstrakteklassen_Interfaces_Events.Events.BinaryNumber;
+package Events.BinaryNumber;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
 
 public class BinaryNumber extends JFrame {
 

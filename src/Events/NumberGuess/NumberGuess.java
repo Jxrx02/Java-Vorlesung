@@ -1,17 +1,11 @@
-package Abstrakteklassen_Interfaces_Events.Events.NumberGuess;
+package Events.NumberGuess;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class NumberGuess extends JFrame {
     static NumberGuess ng;

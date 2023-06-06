@@ -1,4 +1,4 @@
-package Abstrakteklassen_Interfaces_Events.Events;
+package Events;
 
 import javax.swing.*;
 import java.awt.*;
