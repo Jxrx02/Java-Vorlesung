@@ -14,6 +14,7 @@ public class Library {
 
     static String path = "src/Datenstrukturen_25/Exercise/Library/entries.txt";
     static List<Book> books = new LinkedList<>();
+    static List<String> lines = new ArrayList<>();
 
 
     public Library() {
@@ -64,11 +65,17 @@ public class Library {
             Comparator comparator = new Comparator() {
                 @Override
                 public int compare(Object o1, Object o2) {
-                  //  return o1.getAuthor().compareTo(o2.getAuthor());
+                    Book book1 = (Book)o1;
+                    Book book2 = (Book)o2;
+                    Collections.sort(words);
+
+                    return book1.getAuthor().compareTo(book2.getAuthor());
+
                 }
 
 
             };
+
         });
         bot.add(author);
         bot.add(new JButton("Title"));
@@ -107,14 +114,11 @@ public class Library {
         JFrame f = new JFrame();
         JTextArea jTextArea = new JTextArea();
 
-        List<String> lines = new ArrayList<>();
         try ( BufferedReader br =
                       new BufferedReader(new FileReader(dateiname)) ) {
             while (br.ready()) {
                 String line = br.readLine();
                 lines.add(line); // String-Daten an Liste anhängen
-
-                Book entry = new Book();
 
             }
             //System.out.print(lines);
