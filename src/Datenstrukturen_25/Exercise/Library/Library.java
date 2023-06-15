@@ -64,7 +64,7 @@ public class Library {
             Comparator comparator = new Comparator() {
                 @Override
                 public int compare(Object o1, Object o2) {
-                    return o1.getAuthor().compareTo(o2.getAuthor());
+                  //  return o1.getAuthor().compareTo(o2.getAuthor());
                 }
 
 
@@ -81,6 +81,7 @@ public class Library {
     public static void main(String[] args) {
         ReadFromFileToUI (path,500,300);
         new Library();
+        System.out.println("BooksSize:"+ books.size());
         for(int i =0; i<books.size();i++){
             System.out.println("Entry"+i +": " +books.get(i).getEntry());
 
@@ -132,19 +133,19 @@ public class Library {
         System.out.println(lines);
 
         //add to books
-        /*Book entry = new Book();
+        Book entry = new Book();
         for(int i = 0; i< lines.size();i++) {
-            if(i%4==0)
-                entry.setTitle(Arrays.toString(lines.toString().split(",")));
-            if(i%4==1)
-                entry.setAuthor(lines.get(i));
-            if(i%4==2)
-                entry.setYear(lines.get(i));
-            if(i%4==3)
-                entry.setPublisher(lines.get(i));
+            entry.setTitle(lines.get(i));
+            i++;
+            entry.setAuthor(lines.get(i));
+            i++;
+            entry.setYear(lines.get(i));
+            i++;
+            entry.setPublisher(lines.get(i));
 
             books.add(entry);
-        }*/
+            entry = new Book();
+        }
 
 
         f.add(jTextArea);

@@ -26,7 +26,7 @@ public class Book {
     }
 
     public String getEntry(){
-        return this.title + "\n" + this.author + "\n" + this.year + "\n" + this.publisher + "\n";
+        return "\n" + this.title + "\n" + this.author + "\n" + this.year + "\n" + this.publisher + "\n";
     }
 
     public Book(String title, String author, String year, String publisher) {
