@@ -35,9 +35,6 @@ public class ReadFromFileToUI extends JFrame {
         }
 
 
-
-
-
         this.add(jTextArea);
 
         //scrollpanel
