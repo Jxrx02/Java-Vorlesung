@@ -129,6 +129,15 @@ public class Library {
         bot.add(btn_sort_year);
         jf.add(bot, BorderLayout.SOUTH);
 
+        // Ändern des Standard-Look and Feel
+        try {
+            // Ändern der Designvorlage auf Nimbus
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+            SwingUtilities.updateComponentTreeUI(jf);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         jf.pack();
         jf.setVisible(true);
     }
