@@ -1,5 +1,7 @@
 package Datenstrukturen_25.Exercise.Library_Comparator;
 
+import IO_Files.testing_main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
@@ -48,6 +50,20 @@ public class Library {
             writeToFile(path, book.getEntryAsStringToSave(), true);
         });
         mid.add(save);
+
+        JButton delete = new JButton("delete Entry");
+        delete.addActionListener(e -> {
+            Book bookToDelete = new Book(titleField.getText(), authorField.getText(), yearField.getText(), publisherField.getText());
+            System.out.println("delete entry: " + bookToDelete.getEntryAsStringToSave());
+            testing_main.deleteStringFromFile(path, titleField.getText());
+            testing_main.deleteStringFromFile(path, authorField.getText());
+            testing_main.deleteStringFromFile(path, yearField.getText());
+            testing_main.deleteStringFromFile(path, publisherField.getText());
+
+
+        });
+        mid.add(delete);
+
         jf.add(mid, BorderLayout.CENTER);
 
 
