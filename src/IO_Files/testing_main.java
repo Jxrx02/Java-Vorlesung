@@ -66,6 +66,23 @@ public class testing_main {
         }
     }
 
+    public static String readFileToString(String path) {
+        StringBuilder content = new StringBuilder();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                content.append(line);
+                content.append(System.lineSeparator());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return content.toString();
+    }
+
     public static void readFileToDataStructure(){
         System.out.println("To Array with buffered Reader:");
 
