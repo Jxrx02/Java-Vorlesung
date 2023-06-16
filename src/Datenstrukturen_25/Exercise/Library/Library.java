@@ -13,7 +13,7 @@ import java.util.function.BooleanSupplier;
 public class Library {
 
     static String path = "src/Datenstrukturen_25/Exercise/Library/entries.txt";
-    static List<Book> books = new LinkedList<>();
+    static List<Book> books = new ArrayList<>();
     static List<String> lines = new ArrayList<>();
 
 
@@ -61,20 +61,17 @@ public class Library {
         bot.add(new JLabel("Output sorted by:"));
         JButton author = new JButton("author");
         author.addActionListener(e -> {
+
             System.out.println("Sort by author");
-            Comparator comparator = new Comparator() {
+
+            books.sort(new Comparator<Book>(){
                 @Override
-                public int compare(Object o1, Object o2) {
-                    Book book1 = (Book)o1;
-                    Book book2 = (Book)o2;
-                    Collections.sort(words);
+                public int compare(Book o1, Book o2) {
+                    System.out.println("Comperator:" + o1.getAuthor().compareTo(o2.getAuthor()));
 
-                    return book1.getAuthor().compareTo(book2.getAuthor());
-
+                    return o1.getAuthor().compareTo(o2.getAuthor());
                 }
-
-
-            };
+            });
 
         });
         bot.add(author);
