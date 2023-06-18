@@ -1,6 +1,6 @@
 package UI.dialog;
 import javax.swing.*;
-public class JOptionPaneDialog {
+public class JOptionPaneDialog_PopUp {
     public static void main(String[] args) {
         // Message dialog
         JOptionPane.showMessageDialog(null, "May the force be with you!");

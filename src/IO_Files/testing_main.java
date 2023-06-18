@@ -66,6 +66,52 @@ public class testing_main {
         }
     }
 
+    public static String readFileToString(String path) {
+        StringBuilder content = new StringBuilder();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                content.append(line);
+                content.append(System.lineSeparator());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return content.toString();
+    }
+
+    public static void deleteStringFromFile(String path, String stringToDelete) {
+        StringBuilder content = new StringBuilder();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                // Überprüfen, ob die Zeile den zu löschenden String enthält
+                if (line.contains(stringToDelete)) {
+                    // Wenn ja, überspringen wir diese Zeile
+                    continue;
+                }
+
+                content.append(line);
+                content.append(System.lineSeparator());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Den aktualisierten Inhalt in die Datei zurückschreiben
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
+            writer.write(content.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void readFileToDataStructure(){
         System.out.println("To Array with buffered Reader:");
 

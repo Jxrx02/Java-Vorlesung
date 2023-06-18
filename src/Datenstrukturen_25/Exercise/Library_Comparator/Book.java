@@ -1,4 +1,4 @@
-package Datenstrukturen_25.Exercise.Library;
+package Datenstrukturen_25.Exercise.Library_Comparator;
 
 import java.util.Objects;
 
@@ -25,8 +25,8 @@ public class Book {
         return Objects.hash(this.getTitle(), this.getAuthor(), this.getYear(), this.getPublisher());
     }
 
-    public String getEntry(){
-        return "\n" + this.title + "\n" + this.author + "\n" + this.year + "\n" + this.publisher + "\n";
+    public String getEntryAsStringToSave(){
+        return this.title + "\n" + this.author + "\n" + this.year + "\n" + this.publisher;
     }
 
     public Book(String title, String author, String year, String publisher) {
