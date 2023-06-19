@@ -54,7 +54,8 @@ public class GiftWarpping extends JPanel implements MouseListener {
         }
 
         // Zeichne die nächste Linie, falls vorhanden
-        if (currentPointIndex < points.size()) {
+        // Eventuell auskommentieren
+         if(currentPointIndex < points.size()) {
             Point currentPoint = points.get(currentPointIndex +1);
             Point nextPoint = points.get((currentPointIndex +2));
 
@@ -72,19 +73,18 @@ public class GiftWarpping extends JPanel implements MouseListener {
         List<Point> convexHull = new ArrayList<>();
 
         // Finde den Punkt mit der minimalen x-Koordinate (linkester Punkt)
-        int leftmostIndex = 0;
+        int leftPointIndex = 0;
         for (int i = 1; i < n; i++) {
-            if (points.get(i).x < points.get(leftmostIndex).x) {
-                leftmostIndex = i;
+            if (points.get(i).x < points.get(leftPointIndex).x) {
+                leftPointIndex = i;
             }
         }
 
-        int currentPoint = leftmostIndex;
-        int nextPoint;
+        int currentPoint = leftPointIndex;
 
         do {
             convexHull.add(points.get(currentPoint));
-            nextPoint = (currentPoint + 1) % n;
+            int nextPoint = (currentPoint + 1) % n;
 
             for (int i = 0; i < n; i++) {
                 // Überprüfe, ob der i-te Punkt weiter "links" liegt als der nächste Punkt
@@ -94,7 +94,7 @@ public class GiftWarpping extends JPanel implements MouseListener {
             }
 
             currentPoint = nextPoint;
-        } while (currentPoint != leftmostIndex);
+        } while (currentPoint != leftPointIndex);
 
         return convexHull;
     }
@@ -102,7 +102,7 @@ public class GiftWarpping extends JPanel implements MouseListener {
     private int orientation(Point p, Point q, Point r) {
         int value = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
         if (value == 0) {
-            return 0; // Kollinear
+            return 0; // Vielfache voneinander
         }
         return (value > 0) ? 1 : -1; // Uhrzeigersinn oder gegen den Uhrzeigersinn
     }
