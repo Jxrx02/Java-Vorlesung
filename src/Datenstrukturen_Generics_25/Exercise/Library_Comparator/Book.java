@@ -1,4 +1,4 @@
-package Datenstrukturen_25.Exercise.Library_Comparator;
+package Datenstrukturen_Generics_25.Exercise.Library_Comparator;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package Datenstrukturen_25;
+package Datenstrukturen_Generics_25;
 
 import java.util.*;
 
