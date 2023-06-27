@@ -14,6 +14,12 @@ class Point {
         this.x = x;
         this.y = y;
     }
+
+    public double distance(Point p1) {
+        int dx = this.x - p1.x;
+        int dy = this.y - p1.y;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
 }
 
 public class GiftWarpping extends JPanel implements MouseListener {
