@@ -25,10 +25,11 @@ public class Soccer {
         Stream.of(players).sequential().forEach( System.out::println );
 
         System.out.println("\nAlle Spieler, sortiert nach Rückennummer:");
-        players.stream()
-                .sorted((a, b) -> Player.comparePlayerByNumber(a, b))
-                .forEach(System.out::println);
-
+       /* players.stream()
+               .sorted((a, b) -> Player.comparePlayerByNumber(a, b))
+                .forEach(System.out::println);*/
+        players.sort(Player::comparePlayerByNumber);
+        players.forEach(System.out::println);
 
         System.out.println("\nAlle Spieler, mit mehr als 50 Länderspielen, sortiert nach (Vor-)Name:");
         players.stream()
@@ -72,6 +73,10 @@ public class Soccer {
             players = new LinkedList<>(playerList); // Spielerliste zu LinkedList hinzufügen
         } catch (IOException ex) {
             System.err.println("Read error: " + ex.getLocalizedMessage());
+        }
+        catch (NumberFormatException e){
+            System.err.println("Number format error: " + e.getLocalizedMessage());
+
         }
     }
     private Player parsePlayer(String line) {

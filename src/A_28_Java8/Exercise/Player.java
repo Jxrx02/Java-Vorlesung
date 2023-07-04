@@ -18,6 +18,8 @@ public class Player {
 
     static int comparePlayerByNumber(Player p1, Player p2){
         //return Integer.compare(p1.getTrikotnummer(),p2.getTrikotnummer());
+        //return p1.getTrikotnummer()-p2.getTrikotnummer();
+
         return Integer.compare(p2.getTrikotnummer(),p1.getTrikotnummer());
 
     }
