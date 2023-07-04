@@ -1,6 +1,9 @@
 package A_19_IO_Files;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +21,7 @@ public class testing_main {
         System.out.println("\nIn linie 2 steht: " + getLine(2-1));      //getline from arraylist - setline();
 
     }
+
 
 
     public static void createFile(){
@@ -53,6 +57,56 @@ public class testing_main {
 
     }
 
+    /** Verwendung von path,file*/
+    public static List<String> readFile(String path){
+        Path p = Paths.get( path );
+        try {
+            List<String> lines1 = Files.readAllLines( p );
+            return lines1;
+        } catch (IOException e) {
+        }
+        return null;
+    }
+
+
+    /** Datenstrukturen mit Stream auslesen */
+    /*public void loadBooks() {
+        Path p = Paths.get( this.filename );
+        try {
+            Files.readAllLines( p ) // alle Zeilen lesen
+                    .stream()                       // als Stream weiterverarbeiten
+                    .map(l->l.split( ";" ))         // aufsplitten an ";" zu String-Array
+                    .filter( l->l.length == 4 )     // alle Arrays rausfiltern, die nicht genau 4 Einträge haben
+                    .map( l->new Book( l[0], l[1],  // Array in ein Buch-Objekt umwandeln
+                            new Integer( l[2] ), l[3] ) )
+                    .forEach( this.books::add );    // jedes Buch in die Liste hinzufügen
+        } catch (IOException ex) {
+            System.err.println( "Read error: " + ex.getLocalizedMessage() );
+        }
+    }*/
+
+    /*public void loadBooks() {
+        Path p = Paths.get( this.filename );
+            try {
+            // Ergebnis der Stream-Operationen wird this.books zugewiesen!
+              this.books = Files.readAllLines( p ) // alle Zeilen lesen
+                .stream() // als Stream weiterverarbeiten
+                .map( this::parseBook ) // Zeile in Buch umwandeln
+                .filter( Objects::nonNull ) // null-Werte aussortieren
+                .collect( Collectors.toList() ); // Stream in Liste umwandeln
+                } catch (IOException ex) {
+                    System.err.println( "Read error: " + ex.getLocalizedMessage() );
+             }
+        }
+        private Book parseBook(String line) {
+            String[] p = line.split( ";" );
+            if ( p.length == 4 ) {
+            return new Book( p[0], p[1], new Integer( p[2] ), p[3] );
+            } else {
+            return null;
+        }
+}*/
+
     public static void readFileWithBufferedReader(){
         System.out.println("BufferedReader-Class:");
 
@@ -82,6 +136,7 @@ public class testing_main {
 
         return content.toString();
     }
+
 
     public static void deleteStringFromFile(String path, String stringToDelete) {
         StringBuilder content = new StringBuilder();
