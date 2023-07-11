@@ -10,6 +10,10 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 
@@ -114,7 +118,71 @@ public class Gazetter {
         String northeastLng = northeast.getElementsByTagName("lng").item(0).getTextContent();
         System.out.println("Bounds - Southwest: (" + southwestLat + ", " + southwestLng + ")");
         System.out.println("Bounds - Northeast: (" + northeastLat + ", " + northeastLng + ")");
+
+
+
+
+        //KML-Dokument erzeugen
+        factory = DocumentBuilderFactory.newInstance();
+        try {
+             parser = factory.newDocumentBuilder();
+        } catch (ParserConfigurationException e) {
+            throw new RuntimeException(e);
+        }
+        doc = parser.newDocument();
+        Element kml = doc.createElementNS("http://earth.google.com/kml/2.2", "kml");
+        Element document = doc.createElement("Document");
+        kml.appendChild(document);
+        doc.appendChild(kml);
+        // Die Placemark-Elemente können nun hier erzeugt und an das Dokument angehängt
+        // werden.
+
+
+        // Erzeugen der Placemark-Elemente für das Raster
+        for (int row = 0; row < 5; row++) {
+            for (int col = 0; col < 5; col++) {
+                double pointLat = Double.parseDouble(southwestLat + (row * 100));
+                double pointLng = Double.parseDouble(southwestLng + (col * 100));
+
+                Element placemark = doc.createElement("Placemark");
+
+                Element point = doc.createElement("Point");
+                placemark.appendChild(point);
+
+                Element coordinates = doc.createElement("coordinates");
+                coordinates.appendChild(doc.createTextNode(pointLng + "," + pointLat));
+                point.appendChild(coordinates);
+
+                document.appendChild(placemark);
+            }
+        }
+
+        // Speichern der KML-Datei
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = null;
+        try {
+            transformer = transformerFactory.newTransformer();
+        } catch (TransformerConfigurationException ex) {
+            throw new RuntimeException(ex);
+        }
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        DOMSource source = new DOMSource(doc);
+
+        // Speicherort und Dateiname der KML-Datei
+        File file = new File("src/A_29_XML/Exercise_Standort_Gazetter/raster.kml");
+        StreamResult result = new StreamResult(file);
+
+        try {
+            transformer.transform(source, result);
+        } catch (TransformerException ex) {
+            throw new RuntimeException(ex);
+        }
+
+        System.out.println("KML-Datei erfolgreich erstellt: " + file.getAbsolutePath());
     }
+
+
+
 }
 
 
