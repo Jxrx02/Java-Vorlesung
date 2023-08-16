@@ -1,0 +1,3 @@
+Person3,Jürgen Hans,60,Bäcker;
+Person2,Erika Musterfrau,35,Landwirt;
+Person1,Max Mustermann,26,Langzeitstudent;

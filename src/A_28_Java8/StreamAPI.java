@@ -14,15 +14,15 @@ public class StreamAPI {
         Stream.of("Emma","Hannah","Mia","Sophia","Emilia","Lina",
                 "Anna","Marie","Mila","Lea").forEach( names::add );
 
-        // Alle Stream-Elemente ausgeben
+        /** Alle Stream-Elemente ausgeben*/
         //names.stream().forEach( System.out::println );
 
 
-        //parallele Abarbeitung
+        /**parallele Abarbeitung*/
         //Stream.of("Emma","Hannah","Mia","Sophia","Emilia","Lina",
         //        "Anna","Marie","Mila","Lea").parallel().forEach( names::add );
 
-        //sequentielle Abarbeitung
+        /**sequentielle Abarbeitung */
         //Stream.of("Emma","Hannah","Mia","Sophia","Emilia","Lina",
         //        "Anna","Marie","Mila","Lea").sequential().forEach( names::add );
 
@@ -31,9 +31,10 @@ public class StreamAPI {
         //names.stream().filter(n->(n.length()<4)).forEach( System.out::println );
 
 
-        //in Objekte umwandeln - map
+        /**in Objekte umwandeln - map*/
         names.stream()
                 .map( n -> new Person( n ) )
+                .peek(n-> n.setAge(n.getAge()+1))
                 .forEach( System.out::println );
 
         //names.stream().map( Person::new ); // Alternative Schreibweise
@@ -45,7 +46,7 @@ public class StreamAPI {
 
         /**.skip*/// überspringt n elemente
         /**.distinct*/// sortiert doppelte werte aus
-        /**.peek*/// ruft jedes Element einzeln auf
+        /**.peek*/// ruft jedes Element einzeln auf /**Funktionen für jedes Element n ausführen*/
             /*Stream.of("1","2","1","2","1","2")
                     .peek( n -> System.out.println( "Peek: " + n ) )
                     .distinct().forEach(System.out::println); //*/
