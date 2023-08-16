@@ -1,6 +1,4 @@
 
-a
-1src/A_27_Threads/Examples/SynchronizeMonitor.java,e\3\e367472a1898482e6125a800c154d9f61f8f3811
 e
 5src/A_19_IO_Files/LineNumberOutOfBoundsException.java,b\2\b2cf2edb7b5ae74fcba6abca37365a4d9bd71013
 Y
