@@ -13,8 +13,14 @@ public class JOptionPaneDialog_PopUp {
 
 
         // Confirm dialog
-        JOptionPane.showConfirmDialog(null, "Are you OK?");
-
+        int result  = JOptionPane.showConfirmDialog(null, "Are you OK?");
+        if (result == JOptionPane.YES_OPTION) {
+            System.out.println("Sie haben Ja ausgewählt.");
+        } else if (result == JOptionPane.NO_OPTION) {
+            System.out.println("Sie haben Nein ausgewählt.");
+        } else {
+            System.out.println("Sie haben Abbrechen ausgewählt oder das Dialogfeld geschlossen.");
+        }
 
         // Select dialog
         String[] options = { "to be", "not to be", "don't know" };

@@ -47,8 +47,11 @@ public class JFileChooser {
         int state = fc.showOpenDialog(null);
         if (state == javax.swing.JFileChooser.APPROVE_OPTION){
             File[] selectedFiles = fc.getSelectedFiles();
-            for (File f : selectedFiles)
+            for (File f : selectedFiles) {
                 System.out.println(f.getAbsolutePath());
+
+                //Do something with file
+            }
         } else {
             System.out.println("No selection");
         }
@@ -56,7 +59,6 @@ public class JFileChooser {
 
 
     public static void main(String[] args) {
-        ChooseMultipleFiles();
         ChooseMultipleFiles();
     }
 }

@@ -1,3 +1,5 @@
-Person3,Jürgen Hans,60,Bäcker;
-Person2,Erika Musterfrau,35,Landwirt;
-Person1,Max Mustermann,26,Langzeitstudent;
+{1BerndMon Sep 11 11:30:01 CEST 2023},{2HansMon Sep 11 11:30:01 CEST 2023};
+abc,XYZ,MNOP;
+abc,XYZ,LM,{EFG},{HIJ},LM;
+abc,XYZ,LM,{EFG},{HIJ},LM;
+ABC,XYZ,LM,{EFG},{HIJ},LM;

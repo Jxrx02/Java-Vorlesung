@@ -1,4 +1,4 @@
-package A_19_IO_Files;
+package A_18_Exceptions;
 
 public class LineNumberOutOfBoundsException extends Exception {
 

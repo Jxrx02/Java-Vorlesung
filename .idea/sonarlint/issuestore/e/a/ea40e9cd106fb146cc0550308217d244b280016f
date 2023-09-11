@@ -1,0 +1,10 @@
+
+x
+java:S1192("bDefine a constant instead of duplicating this literal "Eggs aren't supposed to be green." 4 times.(ˆ´¤‹
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¨Úƒıÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÖÉÀó
+D
+java:S1905")Remove this unnecessary cast to "String".(‚¢¹ıÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ºª¬·ûÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(õïœÂ
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(¸Œå

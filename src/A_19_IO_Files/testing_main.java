@@ -1,5 +1,7 @@
 package A_19_IO_Files;
 
+import A_18_Exceptions.LineNumberOutOfBoundsException;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;

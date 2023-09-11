@@ -77,10 +77,14 @@ public class StreamAPI {
             System.out.println( namesCsv ); */
 
             //erstes Element
-            /* Optional<String> first = names.stream()
+             /*Optional<String> first = names.stream()
                 .skip( 4 ) // 4 Elemente überspringen
-                .findFirst(); // erstes Element finden //*/
+                .findFirst(); // erstes Element finden //
+             System.out.println( first );*/
+
         /**count*/
+        //System.out.println( names.stream().count() );
+
     }
 
 

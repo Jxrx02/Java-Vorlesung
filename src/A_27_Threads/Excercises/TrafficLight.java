@@ -51,7 +51,6 @@ public class TrafficLight extends JComponent implements Runnable {
     public void run() {
         while (true) {
             try {
-
                 if(i<phases.size()-1)
                     i++;
                 else i =0;

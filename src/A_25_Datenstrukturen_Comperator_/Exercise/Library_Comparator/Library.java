@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Library {
 
-    static String path = "src/Datenstrukturen_25/Exercise/Library_Comparator/entries.txt";
+    static String path = "src/A_25_Datenstrukturen_Comperator_/Exercise/Library_Comparator/entries.txt";
     static List<Book> books = new ArrayList<>();
 
 
