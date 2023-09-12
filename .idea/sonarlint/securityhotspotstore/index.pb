@@ -3,8 +3,6 @@ M
 src/A_28_Java8/StreamAPI.java,b\4\b4e07c07647330349ea875c2a3f8676c9eccd9f8
 Y
 )src/A_19_IO_Files/InputOutputControl.java,2\6\26453736c7421db129c7a4cbc17b48a165eb3008
-e
-5src/A_19_IO_Files/LineNumberOutOfBoundsException.java,b\2\b2cf2edb7b5ae74fcba6abca37365a4d9bd71013
 \
 ,src/AA_Klausuren/Jahr2020/CoronaWarnAPI.java,1\1\116b75aca78d213e63ffbb4d2e0b60d5d7c71c52
 O
@@ -25,3 +23,17 @@ j
 :src/A_25_Datenstrukturen_Comperator_/Exercise/Lottery.java,a\3\a3279f2dd0277263a2249141de1b4a272797dd56
 a
 1src/A_25_Datenstrukturen_Comperator_/Example.java,2\5\25703d857bf8b71ec9d8c67d5767eb89f4a8700b
+T
+$src/AA_Klausuren/Jahr2021/IRoom.java,0\5\0522ea82cc7454cf44fbfb46cf940955d21bcf67
+Z
+*src/AA_Klausuren/Jahr2021/RoomSetting.java,c\a\ca38bc79a4e72a18904175a6f9159e29b816dd5e
+S
+#src/AA_Klausuren/Jahr2021/Room.java,1\3\13942fbf8244cff8559c1211d44f837ba40fe81b
+V
+&src/AA_Klausuren/Jahr2021/Chorona.java,f\3\f38993fdfa4a279b5a3c7910e10e2433e3d369f7
+Y
+)src/AA_Klausuren/Jahr2021/CellButton.java,9\8\98cac76b0bf8b22bca86fd497f04bb52ec76cad9
+^
+.src/AA_Klausuren/Jahr2021/ChoronaTerminal.java,a\0\a00074e5eac5733fb80ae615ce64905980e340a7
+P
+ src/A_18_Exceptions/testing.java,7\9\798e6b4e4fe4e09c33d9de0e37b53c3c98c1a373

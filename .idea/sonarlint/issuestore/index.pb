@@ -1,6 +1,4 @@
 
-e
-5src/A_19_IO_Files/LineNumberOutOfBoundsException.java,b\2\b2cf2edb7b5ae74fcba6abca37365a4d9bd71013
 Y
 )src/A_19_IO_Files/InputOutputControl.java,2\6\26453736c7421db129c7a4cbc17b48a165eb3008
 M
@@ -25,3 +23,17 @@ _
 /src/A_20_UI/dialog/JOptionPaneDialog_PopUp.java,e\a\ea40e9cd106fb146cc0550308217d244b280016f
 a
 1src/A_25_Datenstrukturen_Comperator_/Example.java,2\5\25703d857bf8b71ec9d8c67d5767eb89f4a8700b
+Y
+)src/AA_Klausuren/Jahr2021/CellButton.java,9\8\98cac76b0bf8b22bca86fd497f04bb52ec76cad9
+S
+#src/AA_Klausuren/Jahr2021/Room.java,1\3\13942fbf8244cff8559c1211d44f837ba40fe81b
+Z
+*src/AA_Klausuren/Jahr2021/RoomSetting.java,c\a\ca38bc79a4e72a18904175a6f9159e29b816dd5e
+T
+$src/AA_Klausuren/Jahr2021/IRoom.java,0\5\0522ea82cc7454cf44fbfb46cf940955d21bcf67
+^
+.src/AA_Klausuren/Jahr2021/ChoronaTerminal.java,a\0\a00074e5eac5733fb80ae615ce64905980e340a7
+V
+&src/AA_Klausuren/Jahr2021/Chorona.java,f\3\f38993fdfa4a279b5a3c7910e10e2433e3d369f7
+P
+ src/A_18_Exceptions/testing.java,7\9\798e6b4e4fe4e09c33d9de0e37b53c3c98c1a373

@@ -1,0 +1,11 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰©¾ïûÿÿÿÿ
+:
+java:S1640)"Convert this Map to an EnumMap.(ª¹Òùùÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÐŒß¹ýÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(«´Þïûÿÿÿÿ
+V	java:S125-"<This block of commented-out lines of code should be removed.(«Ä§ýÿÿÿÿ
+Q	java:S125M"<This block of commented-out lines of code should be removed.(‹Œý“
+M
+java:S1144C"7Remove this unused private "parsePolluteFactor" method.(ÌÅËÌ
