@@ -37,3 +37,7 @@ V
 &src/AA_Klausuren/Jahr2021/Chorona.java,f\3\f38993fdfa4a279b5a3c7910e10e2433e3d369f7
 P
  src/A_18_Exceptions/testing.java,7\9\798e6b4e4fe4e09c33d9de0e37b53c3c98c1a373
+V
+&src/AA_Klausuren/Jahr2021/Variant.java,7\5\759b5db680dcdae50010dadaf98d73c8e7ae415f
+`
+0src/AA_Klausuren/Jahr2021/WILD_TYPE-9-7-6-14.txt,6\8\687f7fac29fd259bfded04232267f54dc641b18f

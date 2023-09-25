@@ -10,10 +10,23 @@ import java.util.List;
 
 public class InputOutputControl {
 
+  /**
+   * src/.../path/to/file<b>/<b/>
+   */
   public static String path;
+  /**
+   * [FILENAME].txt
+   */
   public static String filename; //filename .txt
+  /**
+   * if append = true: <b>append</b> to file <p>
+   * if append = false: <b>overwrite</b> file
+   */
   public static boolean append = true;
 
+  /**
+   * Deletes all the file-content but not the file itself.
+   */
   public static void deleteCompleteFileContentButNotFile() {
     try (Writer out = new FileWriter(path + filename, false)) {
       out.write(""); //
@@ -23,6 +36,12 @@ public class InputOutputControl {
     }
   }
 
+  /**
+   * @return return each line as String into String[]. The function does <b>NOT</b> split the string by , or ;
+   * <p>Example: <p>
+   * 0 = "A,B,C;" <p>
+   * 1 = "D,E,F,G,H;"
+   */
   public static String[] getLines() {
     List<String> zeilenListe = new ArrayList<>();
 
@@ -37,6 +56,19 @@ public class InputOutputControl {
     return zeilenListe.toArray(new String[0]);
   }
 
+  /**
+   * Each method-call inserts the whole list in one single line
+   *
+   * @param objects <p>
+   *                Example list: <p>
+   *                [0] = A, [1] = B, [2] = C;  -- call saveContent() <p>
+   *                [0] = D ...                 -- call saveContent()
+   *                <p>
+   *                ... generates output in file: <p>
+   *                A,B,C;  <p>
+   *                D,E,F,G,H;
+   * @implSpec Creates new file if File doesn't exist
+   */
   public static void saveContent(LinkedList<String> objects) {
     //Generate line
     String line = "";
@@ -60,6 +92,11 @@ public class InputOutputControl {
     }
   }
 
+  /**
+   * Use:  LinkedList < String[] > l = loadContent();
+   *
+   * @return LinkedList < String[] >
+   */
   public static LinkedList<String[]> loadContent() {
     List<String[]> entry = new LinkedList<>();
 
@@ -77,7 +114,6 @@ public class InputOutputControl {
 
   private static String[] parseLine(String line) {
     String[] parts = line.split("[,]");
-    //for string
     parts[parts.length - 1] = parts[parts.length - 1].toString().replace(";", "");   //remove semicolon from last part
     return parts;
 
@@ -96,6 +132,15 @@ public class InputOutputControl {
         return null;*/
   }
 
+  /**
+   * @param path        - path + filename
+   * @param regex       - char or String which should be replaced
+   * @param replacement - String that replaces the regex
+   *                    <p>
+   *                    replaceRegexWithString(<p>InputOutputControl.path + InputOutputControl.filename,
+   *                    <p>"Hans", "Jürgen");
+   *                    <p>ersetzt alle "Hans" mit "Jürgen"</p>
+   */
   public static void replaceRegexWithString(String path, String regex, String replacement) {
     try {
       String content = Files.readString(Path.of(path));
