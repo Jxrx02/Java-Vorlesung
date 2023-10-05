@@ -2,11 +2,11 @@ package A_27_Threads.Examples;
 
 public class FirstThread extends Thread {
 
-    //Treads:
-    //Parallele Ausführung von Anweisungen auf einem oder mehreren Prozessoren bzw. Prozessorkernen.
-    //eigenen lokalen Speicherbereich
+  //Treads:
+  //Parallele Ausführung von Anweisungen auf einem oder mehreren Prozessoren bzw. Prozessorkernen.
+  //eigenen lokalen Speicherbereich
 
-    //Prozess: ablauffähiges Programm
+  //Prozess: ablauffähiges Programm
 
 
     /*  Threads - Klasse
@@ -39,25 +39,24 @@ public class FirstThread extends Thread {
         Lässt den gerade ausgeführten Thread (kurz) pausieren und gibt anderen Threads eine Chance zur Ausführung.*/
 
 
-    // ThreadGroup - Klasse
+  public static void main(String args[]) {
+    FirstThread thread = new FirstThread();
+    thread.start();
+    System.out.println("End of main");
+  }
 
-    public void run() {
-        for (int i = 0; i < 10; i++) {
-            System.out.println(i + " ");
-            try {
-                Thread.sleep(100); // 100 Millisekunden warten
-            } catch (InterruptedException e) {
-                System.out.println(e);
-            }
-        }
-        System.out.println("End of thread " + this.toString());
+  // ThreadGroup - Klasse
+  public void run() {
+    for (int i = 0; i < 10; i++) {
+      System.out.println(i + " ");
+      try {
+        Thread.sleep(100); // 100 Millisekunden warten
+      } catch (InterruptedException e) {
+        System.out.println(e);
+      }
     }
-
-    public static void main(String args[]) {
-        FirstThread thread = new FirstThread();
-        thread.start();
-        System.out.println("End of main");
-    }
+    System.out.println("End of thread " + this.toString());
+  }
 
 
 }

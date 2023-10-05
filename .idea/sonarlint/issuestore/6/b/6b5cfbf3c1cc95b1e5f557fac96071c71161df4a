@@ -1,0 +1,27 @@
+
+n
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(§Ó3
+f
+java:S11922"QDefine a constant instead of duplicating this literal "dir/testFile.txt" 5 times.(òõ˜k
+y
+java:S1488B"^Immediately return this expression instead of assigning it to the temporary variable "lines1".(åÌ—›ÿÿÿÿÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÖÔîÌ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ù±ıÚûÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(Œ´‘˜ùÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(ìšØ…
+Q	java:S125"<This block of commented-out lines of code should be removed.(ìšØ…
+W	java:S899&"BDo something with the "boolean" value returned by "createNewFile".(ì¨·
+Q	java:S125+"<This block of commented-out lines of code should be removed.(ƒ§ÿ·
+@	java:S1061"+Replace this use of System.out by a logger.(¸ô±¶
+@	java:S1066"+Replace this use of System.out by a logger.(Ìš‡ø
+>	java:S108D")Either remove or fill this block of code.(ï­£Ä
+A
+java:S1168F"+Return an empty collection instead of null.(¥¹ï
+V	java:S125K"<This block of commented-out lines of code should be removed.(“òÁ±øÿÿÿÿ
+V	java:S125Z"<This block of commented-out lines of code should be removed.(“òÁ±øÿÿÿÿ
+E	java:S106q"+Replace this use of System.out by a logger.(š»¢±øÿÿÿÿ
+E	java:S106u"+Replace this use of System.out by a logger.(ã¯é‘ûÿÿÿÿ
+F	java:S106­"+Replace this use of System.out by a logger.(“£øôşÿÿÿÿ
+A	java:S106·"+Replace this use of System.out by a logger.(òıÔ´
+F	java:S106Ì"+Replace this use of System.out by a logger.(ğ˜óñşÿÿÿÿ
+F	java:S106á"+Replace this use of System.out by a logger.(¨¶ÑÍşÿÿÿÿ

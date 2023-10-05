@@ -1,4 +1,4 @@
-package A_19_IO_Files;
+package AA_Klausuren.Klausur;
 
 import javax.swing.*;
 import java.io.*;
@@ -8,26 +8,26 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class InputOutputControl {
+public class IOControll {
 
   /**
    * src/.../path/to/file<b>/<b/>
    */
   public static String path;
   /**
-   * [FILENAME].txt
-   */
-  public static String filename; //filename .txt
-  /**
    * if append = true: <b>append</b> to file <p>
    * if append = false: <b>overwrite</b> file
    */
   public static boolean append = true;
+  /**
+   * [FILENAME].txt
+   */
+  public static String filename; //filename .txt
 
   /**
    * Deletes all the file-content but not the file itself.
    */
-  public static void deleteCompleteFileContentButNotFile() {
+  public static void clearFileContent() {
     try (Writer out = new FileWriter(path + filename, false)) {
       out.write(""); //
 
@@ -42,7 +42,7 @@ public class InputOutputControl {
    * 0 = "A,B,C;" <p>
    * 1 = "D,E,F,G,H;"
    */
-  private static String[] getAllLinesAsStringArray() {
+  public static String[] getAllLinesAsStringArray() {
     List<String> zeilenListe = new ArrayList<>();
 
     try {
@@ -108,7 +108,7 @@ public class InputOutputControl {
     List<String[]> entry = new LinkedList<>();
 
     try {
-      BufferedReader reader = new BufferedReader(new FileReader(InputOutputControl.path + InputOutputControl.filename));
+      BufferedReader reader = new BufferedReader(new FileReader(IOControll.path + IOControll.filename));
       while (reader.ready()) entry.add(parseLine(reader.readLine()));
 
     } catch (Exception e) {
@@ -158,9 +158,53 @@ public class InputOutputControl {
     }
   }
 
+  public static void saveString(String content, boolean append) {
+    try {
+      var fileWriter = new FileWriter(path + filename, append);
+      BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+      // Schreiben Sie den String in die Datei
+      bufferedWriter.write(content);
+
+      // Schließen Sie den BufferedWriter, um Ressourcen freizugeben
+      bufferedWriter.close();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+
+  }
+
+  public static void deleteFile() {
+    File file = new File(path + filename);
+    file.delete();
+    if (file.exists() && file.delete()) System.out.println("Deleted successfully");
+    else
+      System.out.println("Something went wrong when deleting " + file.getAbsolutePath());
+  }
+
+  public static Boolean isInFile(String search) {
+    var file = new File(path + filename);
+    boolean gefunden = false;
+
+
+    for (int i = 1; i <= List.of(getAllLinesAsStringArray()).size(); i++)
+      try {
+        if (getLine(i).contains(search)) {
+          gefunden = true;
+          break;
+        }
+      } catch (Exception e) {
+        return false;
+      }
+    return gefunden;
+  }
+
   public static void main(String[] args) {
     path = "src/AA_Klausuren/Klausur/";
     filename = "test.txt";
+
+    //Write line
+    saveString("hi\n", true);
 
     //Save List
     LinkedList<String> s = new LinkedList<>();
@@ -174,16 +218,16 @@ public class InputOutputControl {
     //InputOutputControl.replaceRegexWithString(path + filename, "ABC", "abc");
 
     //Save List
-    InputOutputControl.saveList(s);
+    //InputOutputControl.saveList(s);
 
     //Load List
-    LinkedList<String[]> l = InputOutputControl.loadFileAsList();
+    LinkedList<String[]> l = IOControll.loadFileAsList();
 
     //print each element from each StringArray from List
     for (String[] array : l) for (String element : array) System.out.println(element);
 
     //Load lines just for fun
-    String[] lines = InputOutputControl.getAllLinesAsStringArray();
+    String[] lines = IOControll.getAllLinesAsStringArray();
 
   }
 

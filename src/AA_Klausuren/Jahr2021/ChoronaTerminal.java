@@ -92,7 +92,7 @@ class ChoronaTerminal implements Runnable {
             cellButtons[i][j] = new CellButton(room.getDose(i, j), true);
             LinkedList<String> element = new LinkedList<>();
             element.add(i + ";" + j + ";" + cellButtons[i][j].getDose());
-            InputOutputControl.saveContent(element);
+            InputOutputControl.saveList(element);
           }
         JOptionPane.showMessageDialog(null, filename + " saved successfully");
 

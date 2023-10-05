@@ -46,7 +46,7 @@ public class Chorona {
     //Chorona.parsePolluteFactor("OMICRON,200", map);
     path = "src/AA_Klausuren/Jahr2021/";
     filename = "pollutantfactors.txt";
-    LinkedList<String[]> list = loadContent();
+    LinkedList<String[]> list = loadFileAsList();
     for (int i = 0; i < list.size(); i++) {
       map.put(Variant.valueOf((list.get(0)[0])), Double.parseDouble(list.get(0)[1]));
       list.remove(0);
@@ -69,7 +69,7 @@ public class Chorona {
     if (parts.length >= 2) map.put(Variant.valueOf(parts[0]), Double.parseDouble(parts[1]));
   }
 
-  public static Color getColorForDose(double dose) {
+  static Color getColorForDose(double dose) {
     final int limit1 = 200;
     final int limit2 = 500;
     int val = Math.max(0, 255 - (int) (255 * (dose / limit1)));
