@@ -31,8 +31,8 @@ public class SoederMemory {
       players.add(new Player("Horst"));
 
       final Random r = new Random();
-      final int cols = r.nextInt(3) + 2; // min 2, max 4
-      final int rows = r.nextInt(3) + 2; // min 2, max 4
+      final int cols = r.nextInt(5) + 2; // min 2, max 4
+      final int rows = r.nextInt(5) + 2; // min 2, max 4
       final MemoryGame game = new MemoryGame(players, MemoryImages.getImages(), rows, cols);
 
       new MemoryGameTerm(game);

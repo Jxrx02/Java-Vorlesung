@@ -10,6 +10,10 @@ public enum PlayerStatus {
 
   private final Color color;
 
+  public Color getColor() {
+    return color;
+  }
+
   PlayerStatus(Color color) {
     this.color = color;
   }

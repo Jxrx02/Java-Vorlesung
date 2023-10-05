@@ -1,0 +1,5 @@
+Game ends after 0 rounds, scores: Angela (2), Andrea (0), Horst (0), 
+Game ends after 4 rounds, scores: Angela (0), Andrea (0), Horst (3), 
+Game ends after 16 rounds, scores: Angela (1), Andrea (4), Horst (5), 
+Game ends after 9 rounds, scores: Angela (0), Andrea (2), Horst (4), 
+Game ends after 2 rounds, scores: Angela (0), Andrea (4), Horst (0), 
