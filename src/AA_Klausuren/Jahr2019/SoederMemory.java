@@ -26,9 +26,9 @@ public class SoederMemory {
 
     try {
       final List<Player> players = new ArrayList<>();
-      players.add(new Player("Angela"));
-      players.add(new Player("Andrea"));
-      players.add(new Player("Horst"));
+      players.add(new Player("Specht"));
+      players.add(new Player("Essert"));
+
 
       final Random r = new Random();
       final int cols = r.nextInt(5) + 2; // min 2, max 4

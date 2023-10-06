@@ -18,7 +18,7 @@ public class MemoryGame {
     this.playerList = players;
     this.playerList.get(0).setStatus(PlayerStatus.ACTIVE);
 
-    if (images.size() < 2) throw new MemoryException("At least two players required");
+    if (playerList.size() < 2) throw new MemoryException("At least two players required");
 
     float x = ((rows * cols) / 2);
     if (x % 2 != 0) {
@@ -34,12 +34,13 @@ public class MemoryGame {
   public Player getCurrentPlayer() {
     return playerList.get(playerTurn);
   }
-  public void nextPlayer(){
-    if(playerTurn < playerList.size()-1){
+
+  public void nextPlayer() {
+    if (playerTurn < playerList.size() - 1) {
       playerList.get(playerTurn).setStatus(PlayerStatus.WAITING);
       playerTurn++;
       playerList.get(playerTurn).setStatus(PlayerStatus.ACTIVE);
-    }else {
+    } else {
       playerList.get(playerTurn).setStatus(PlayerStatus.WAITING);
       playerTurn = 0;
       playerList.get(playerTurn).setStatus(PlayerStatus.ACTIVE);
