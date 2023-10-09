@@ -7,7 +7,7 @@ public class SnatChat {
 
     room.register(new SnatChatWindow(room, new Account("Bob")));
     room.register(new SnatChatWindow(room, new Account("Alice")));
-
+    room.register(new SnatChatWindow(room, new Account("Jere")));
 
   }
 

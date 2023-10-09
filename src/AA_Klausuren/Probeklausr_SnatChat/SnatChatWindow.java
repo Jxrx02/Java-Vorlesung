@@ -109,7 +109,6 @@ public class SnatChatWindow implements SnatChatFrontend {
                 - GridLayout      new GridLayout(4, 2, 2, 2)
                 - GroupLayout
              */
-
     frame.add(topPane, BorderLayout.PAGE_START);
     frame.add(centerPane, BorderLayout.CENTER);
     frame.add(bottomPane, BorderLayout.PAGE_END);
@@ -119,6 +118,8 @@ public class SnatChatWindow implements SnatChatFrontend {
     //frame.pack(); // auto sizing
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
+
+
   }
 
   @Override
