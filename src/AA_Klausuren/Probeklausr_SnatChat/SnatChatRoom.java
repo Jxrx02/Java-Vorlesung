@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SnatChatRoom {
 
-  private List<SnatChatFrontend> accounts = new LinkedList<>();
+  private List<SnatChatFrontend> clients = new LinkedList<>();
   private String roomName;
 
   public SnatChatRoom(String roomName) {
@@ -20,7 +20,7 @@ public class SnatChatRoom {
   }
 
   public void register(SnatChatFrontend s){
-    accounts.add(s);
+    clients.add(s);
     String log ="";
     for (int i = 0; i < IOControll.getAllLinesAsStringArray().length; i++) {
       if(i < 10){
@@ -30,17 +30,17 @@ public class SnatChatRoom {
     }
   }
   public void unregister(SnatChatFrontend s){
-    accounts.remove(s.getAccount());
+    clients.remove(s.getAccount());
 
   }
   public void sendMessage(Message msg){
-    for (SnatChatFrontend client: accounts) {
+    for (SnatChatFrontend client: clients) {
       client.receiveMessage(msg);
     }
     writeToTextFile(msg.getText());
   }
   public void sendMessage(String text){
-    for (SnatChatFrontend client: accounts) {
+    for (SnatChatFrontend client: clients) {
       client.recieveMessage(text);
     }
     writeToTextFile(text);
