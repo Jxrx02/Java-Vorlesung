@@ -87,7 +87,7 @@ public class Game {
             //add 5
             playerSheets.get(i).getPlayer().setPunktzahl(playerSheets.get(i).getPlayer().getPunktzahl() + 5);
             playerSheets.get(i).getPanes().get(i).setLabel_points(String.valueOf(playerSheets.get(i).getPlayer().getPunktzahl()));
-
+    
           }
         }
       }
@@ -95,7 +95,7 @@ public class Game {
       hasSingleValue = true;
     }
   }
-
+  
   private boolean isCorrect(String text, String cat){
     if(text.length()<1)
       return false;
